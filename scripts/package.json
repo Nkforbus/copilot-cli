@@ -1,0 +1,14 @@
+{
+  "name": "copilot-cli-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Utility scripts for the copilot-cli repository",
+  "main": "db.js",
+  "scripts": {
+    "test:db": "node -e \"const db = require('./db'); db.connect().then((c) => { console.log('DB connection OK'); c.release(); return db.closePool(); }).catch((err) => { console.error(err); process.exit(1); })\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.5"
+  }
+}
